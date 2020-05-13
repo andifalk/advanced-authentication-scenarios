@@ -1,0 +1,25 @@
+server:
+  port: 8090
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          auth0:
+            provider: auth0
+            client-id: kRsjhR7dln3RrhMU82qFi0mlvHVu45hx
+            client-secret: zCD6bmgSCrtPKPrk398dm8eFMkvmlHElZss0BcRxgqjVZNwbunkG9WHNgPEfKu65
+            authorization-grant-type: authorization_code
+            redirect-uri: '{baseUrl}/login/oauth2/code/{registrationId}'
+            scope: openid,profile,email,offline_access
+        provider:
+          auth0:
+            authorization-uri: https://access-me.eu.auth0.com/authorize
+            token-uri: https://access-me.eu.auth0.com/oauth/token
+            user-info-uri: https://access-me.eu.auth0.com/userinfo
+            user-name-attribute: sub
+            jwk-set-uri: https://access-me.eu.auth0.com/.well-known/jwks.json
+      resourceserver:
+        jwt:
+          jwk-set-uri: https://access-me.eu.auth0.com/.well-known/jwks.json

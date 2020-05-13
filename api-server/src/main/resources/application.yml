@@ -1,0 +1,8 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: https://access-me.eu.auth0.com/.well-known/jwks.json
+server:
+  port: 8080
